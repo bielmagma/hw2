@@ -18,7 +18,7 @@ Movie::~Movie()
 }
 
 
-set<string> Movie::keywords(){
+set<string> Movie::keywords() const{
 
 	set<string> title;
 
@@ -32,7 +32,7 @@ set<string> Movie::keywords(){
 	return title;
 }
 
-string Movie::displayString(){
+string Movie::displayString() const{
 	return "Movie's info: Title: " + name_ + "; Genre: " + genre_ + "; Rating: " + rating_;
 }
 

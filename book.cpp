@@ -17,7 +17,7 @@ Book::~Book()
 
 }
 
-set<string> Book::keywords(){
+set<string> Book::keywords() const{
 
 	set<string> title;
 	set<string> author;
@@ -35,7 +35,7 @@ set<string> Book::keywords(){
 	return complete;
 }
 
-string Book::displayString(){
+string Book::displayString() const{
 	return "Book's info: Title: " + name_ + "; Author: " + author_ + "; ISBN: " + isbn_;
 }
 

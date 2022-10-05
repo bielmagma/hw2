@@ -19,7 +19,7 @@ Clothing::~Clothing()
 }
 
 
-set<string> Clothing::keywords(){
+set<string> Clothing::keywords() const{
 
 	set<string> title;
 	set<string> brand;
@@ -32,7 +32,7 @@ set<string> Clothing::keywords(){
 	return complete;
 }
 
-string Clothing::displayString(){
+string Clothing::displayString() const{
 	return "Clothing's info: Name: " + name_ + "; Brand: " + brand_ + "; Size: " + size_;
 }
 
