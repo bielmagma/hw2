@@ -14,11 +14,7 @@ public:
     /**
      * Parses product info from the given input stream
      */
-    Product* parse(std::string category,
-                   std::istream& is,
-                   bool& error,
-                   std::string& errorMsg,
-                   int& lineno);
+    Product* parse(std::string category, std::istream& is, bool& error, std::string& errorMsg, int& lineno);
 
     /**
      * Returns the product category for this parser
@@ -29,20 +25,13 @@ protected:
     /**
      * Parses the common data members of a product
      */
-    void parseCommonProduct(std::istream& is,
-                            bool& error,
-                            std::string& errorMsg,
-                            int& lineno);
+    void parseCommonProduct(std::istream& is, bool& error, std::string& errorMsg, int& lineno);
 
     /**
      * Parses the unique data members of a specific product type
      *   and allocates a specific Product object
      */
-    virtual Product* parseSpecificProduct(std::string category,
-                                          std::istream& is,
-                                          bool& error,
-                                          std::string& errorMsg,
-                                          int& lineno) = 0;
+    virtual Product* parseSpecificProduct(std::string category, std::istream& is, bool& error, std::string& errorMsg, int& lineno) = 0;
 
 
     /**
@@ -62,11 +51,7 @@ class ProductBookParser : public ProductParser
 {
 public:
     ProductBookParser();
-    Product* parseSpecificProduct(std::string category,
-                                  std::istream& is,
-                                  bool& error,
-                                  std::string& errorMsg,
-                                  int& lineno);
+    Product* parseSpecificProduct(std::string category, std::istream& is, bool& error, std::string& errorMsg, int& lineno);
 
     std::string categoryID();
 
@@ -83,11 +68,7 @@ class ProductClothingParser : public ProductParser
 {
 public:
     ProductClothingParser();
-    Product* parseSpecificProduct(std::string category,
-                                  std::istream& is,
-                                  bool& error,
-                                  std::string& errorMsg,
-                                  int& lineno);
+    Product* parseSpecificProduct(std::string category, std::istream& is, bool& error, std::string& errorMsg, int& lineno);
 
     std::string categoryID();
 
@@ -104,11 +85,7 @@ class ProductMovieParser : public ProductParser
 {
 public:
     ProductMovieParser();
-    Product* parseSpecificProduct(std::string category,
-                                  std::istream& is,
-                                  bool& error,
-                                  std::string& errorMsg,
-                                  int& lineno);
+    Product* parseSpecificProduct(std::string category, std::istream& is, bool& error, std::string& errorMsg, int& lineno);
 
     std::string categoryID();
 
